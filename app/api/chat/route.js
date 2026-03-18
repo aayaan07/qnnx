@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextResponse } from "next/server";
 
 // Initialize the Gemini API with your key from .env.local
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey || "");
 
 /**
