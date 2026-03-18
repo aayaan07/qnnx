@@ -3,15 +3,6 @@ import TrustItem from "./ui/TrustItem"
 
 export default function EngagementSection() {
 
-    const partners = [
-        "Indian Army – Signal Regiment",
-        "Delhi Police – Crime Division",
-        "DRDO",
-        "C-DOT (PQC Division)",
-        "SEBI Leadership",
-        "Bessemer Venture Partners",
-        "Info Edge"
-    ]
 
     return (
         <section
@@ -54,58 +45,46 @@ LEFT SIDE: STRATEGIC ECOSYSTEM (Col Span 7)
                         {/* The Trust List - Clean Glass Panel */}
                         <div className="space-y-4">
                             {/* 1. Defense */}
-                            <div className="group relative p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500">
+                            <div className="group relative p-5 rounded-xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-500">
                                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-red-500 rounded-l-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <div className="flex items-start gap-4">
+                                <div className="flex w-full items-center gap-4">
                                     <div className="p-2 rounded-lg bg-red-500/10 text-red-400 mt-1">
                                         <ShieldAlert size={18} />
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-white mb-2 tracking-wide">
+                                        <h3 className="text-sm font-bold text-white tracking-wide">
                                             Defense & Security
                                         </h3>
-                                        <p className="text-xs text-gray-500 leading-relaxed">
-                                            Indian Army (Signal Regiment) • Delhi Police (Crime
-                                            Division) • DRDO (TDF)
-                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* 2. Regulatory */}
-                            <div className="group relative p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500">
+                            <div className="group relative p-5 rounded-xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-500">
                                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <div className="flex items-start gap-4">
+                                <div className="flex items-center gap-4">
                                     <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 mt-1">
                                         <Landmark size={18} />
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-white mb-2 tracking-wide">
+                                        <h3 className="text-sm font-bold text-white tracking-wide">
                                             Government & Regulatory
                                         </h3>
-                                        <p className="text-xs text-gray-500 leading-relaxed">
-                                            C-DOT (PQC Division) • Leadership from SEBI • Strategic
-                                            Banking Ecosystems
-                                        </p>
                                     </div>
                                 </div>
                             </div>
 
                             {/* 3. Investment */}
-                            <div className="group relative p-5 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500">
+                            <div className="group relative p-5 rounded-xl border border-white/5 bg-white/2 hover:bg-white/4 transition-all duration-500">
                                 <div className="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 rounded-l-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                                <div className="flex items-start gap-4">
+                                <div className="flex items-center gap-4">
                                     <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 mt-1">
                                         <TrendingUp size={18} />
                                     </div>
                                     <div>
-                                        <h3 className="text-sm font-bold text-white mb-2 tracking-wide">
+                                        <h3 className="text-sm font-bold text-white tracking-wide">
                                             Investment & Industry
                                         </h3>
-                                        <p className="text-xs text-gray-500 leading-relaxed">
-                                            Bessemer Venture Partners • Info Edge (Sanjeev
-                                            Bikhchandani)
-                                        </p>
                                     </div>
                                 </div>
                             </div>
