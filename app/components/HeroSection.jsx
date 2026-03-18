@@ -2,7 +2,7 @@ export default function HeroSection() {
     return (
         <section
             id="home"
-            className="relative h-screen w-full flex flex-col items-center justify-center z-10 text-white"
+            className="relative h-fit py-16 w-full flex flex-col items-center justify-center z-10 text-white"
         >
             <div className="text-center px-4 max-w-6xl mt-16">
 
