@@ -82,6 +82,8 @@ export default function ChatWidget() {
         body: JSON.stringify({ message: trimmed, history }),
       });
 
+      console.log("STATUS:", res.status);
+
       if (!res.ok) {
         throw new Error("API request failed");
       }
@@ -111,7 +113,8 @@ export default function ChatWidget() {
           )
         );
       });
-    } catch {
+    } catch (error) {
+      console.log(error)
       setIsLoading(false);
       setMessages((prev) => [
         ...prev,
