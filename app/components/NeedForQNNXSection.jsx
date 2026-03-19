@@ -1,143 +1,175 @@
 "use client"
 
-import { Clock, ShieldOff, Zap, AlertTriangle, Download } from "lucide-react"
+import { Download, ExternalLink } from "lucide-react"
 
-const threats = [
+const cases = [
     {
-        icon: ShieldOff,
-        color: "red",
-        label: "Encryption Collapse",
-        title: "RSA & ECC Are Broken — in Theory, Then in Practice",
-        body: "Shor's Algorithm running on a cryptographically-relevant quantum computer will render today's public-key infrastructure obsolete. The timeline is no longer measured in decades.",
+        image: "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
+        source: "DIGITAL BANKING",
+        date: "Near Future Risk",
+        quote:
+            "A user's entire bank account history, transactions, and credentials—secured today—could be decrypted in the future using quantum computers, exposing financial identities retroactively.",
+        tag: "Banking Threat",
+        tagColor: "red",
     },
     {
-        icon: Clock,
-        color: "amber",
-        label: "Harvest Now, Decrypt Later",
-        title: "Adversaries Are Already Collecting Your Data",
-        body: "Nation-state actors are intercepting encrypted traffic today with the explicit strategy of decrypting it the moment a capable quantum computer is online. The attack has already begun.",
+        image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
+        source: "ENCRYPTION FAILURE",
+        date: "Present-Day Concern",
+        quote:
+            "Core encryption standards like RSA and ECC are already considered vulnerable in a post-quantum world. Once scalable quantum systems arrive, today’s encryption could be broken in minutes.",
+        tag: "Encryption Risk",
+        tagColor: "purple",
     },
     {
-        icon: AlertTriangle,
-        color: "orange",
-        label: "Critical Infrastructure",
-        title: "Power Grids, Comms & Finance Have No Quantum Defense",
-        body: "SCADA systems, satellite links, and banking protocols were never designed for post-quantum threats. A single cryptographic break cascades across entire sectors.",
+        image: "https://media.istockphoto.com/id/1355657756/photo/military-surveillance-officer-working-on-a-city-tracking-operation-in-a-central-office-hub.jpg?s=612x612&w=0&k=20&c=IR_npi-H0X-65r1R-LIyHiea1XHuF6agkzlSkfwtiIQ=",
+        source: "DEFENSE COMMUNICATION",
+        date: "Critical Risk",
+        quote:
+            "Military and government communications intercepted today may remain unread—but future quantum systems could decrypt them, exposing classified strategies and national security secrets.",
+        tag: "National Security",
+        tagColor: "blue",
     },
     {
-        icon: Zap,
-        color: "purple",
-        label: "Migration Complexity",
-        title: "Retrofitting Legacy Systems Is an Engineering Crisis",
-        body: "Government and enterprise infrastructure can't simply swap cryptographic primitives. QNNX builds quantum-resilient layers that integrate without destroying existing operations.",
+        image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+        source: "SMART INFRASTRUCTURE",
+        date: "Emerging Threat",
+        quote:
+            "Smart grids, power systems, and critical infrastructure rely on encryption. A quantum attack could disrupt entire cities by breaking these protections.",
+        tag: "Infrastructure Risk",
+        tagColor: "orange",
     },
-]
+];
 
-const colorMap = {
-    red: { bar: "bg-red-500", icon: "bg-red-500/10 text-red-400", label: "text-red-400" },
-    amber: { bar: "bg-amber-500", icon: "bg-amber-500/10 text-amber-400", label: "text-amber-400" },
-    orange: { bar: "bg-orange-500", icon: "bg-orange-500/10 text-orange-400", label: "text-orange-400" },
-    purple: { bar: "bg-purple-500", icon: "bg-purple-500/10 text-purple-400", label: "text-purple-400" },
+const tagStyles = {
+    blue: "bg-violet-500/15 text-violet-300 border-violet-500/30",
+    red: "bg-rose-500/15 text-rose-300 border-rose-500/30",
+    amber: "bg-amber-500/15 text-amber-300 border-amber-500/30",
+    orange: "bg-orange-500/15 text-orange-300 border-orange-500/30",
 }
 
 export default function NeedForQNNXSection() {
     return (
         <section
             id="need-for-qnnx"
-            className="relative w-full flex items-center justify-center z-10 bg-black text-white overflow-hidden py-28"
+            className="relative w-full bg-black text-white overflow-hidden py-24"
+            style={{ fontFamily: "'Georgia', 'Times New Roman', serif" }}
         >
-            {/* — Ambient Lighting — */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-purple-900/10 rounded-full blur-[140px] pointer-events-none" />
-            <div className="absolute bottom-0 right-0 w-[500px] h-[400px] bg-red-900/8 rounded-full blur-[120px] pointer-events-none" />
+            {/* Ambient purple glows */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-200 h-125 bg-violet-700/20 rounded-full blur-[130px] pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-100 h-100 bg-purple-900/20 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-87.5 h-87.5 bg-indigo-900/20 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="max-w-7xl px-6 w-full relative z-20">
+            {/* Subtle grid texture */}
+            <div
+                className="absolute inset-0 pointer-events-none opacity-[0.04]"
+                style={{
+                    backgroundImage:
+                        "repeating-linear-gradient(0deg, #a78bfa 0px, #a78bfa 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, #a78bfa 0px, #a78bfa 1px, transparent 1px, transparent 60px)",
+                }}
+            />
+
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
 
                 {/* ── HEADER ── */}
-                <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end border-b border-white/5 pb-10">
-                    {/* Left — headline */}
-                    <div>
-                        <div className="flex items-center gap-3 mb-4">
-                            <div className="h-[1px] w-8 bg-purple-500" />
-                            <span className="text-purple-400 text-[10px] font-mono uppercase tracking-[0.2em]">
-                                The Quantum Threat
-                            </span>
-                        </div>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white leading-[0.95]">
-                            Why the World{" "}<br />
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-purple-200 to-gray-500">
-                                Needs QNNX.
-                            </span>
-                        </h2>
-                    </div>
-
-                    {/* Right — sub-copy */}
-                    <div className="pb-1 max-w-lg">
-                        <p className="text-gray-500 text-sm leading-relaxed font-light">
-                            <span className="text-gray-300 font-medium">
-                                Quantum computing is an existential cryptographic event —
-                            </span>{" "}
-                            not a future risk to monitor, but a present threat to architect against.
-                            Every organisation that stores sensitive data today is already a target.
+                <div className="text-center mb-16">
+                    <div className="flex items-center justify-center gap-3 mb-5">
+                        <div className="h-px w-8 bg-violet-500" />
+                        <p
+                            className="text-[10px] uppercase tracking-[0.35em] text-violet-400"
+                            style={{ fontFamily: "'Courier New', monospace" }}
+                        >
+                            Why Now
                         </p>
+                        <div className="h-px w-8 bg-violet-500" />
                     </div>
+                    <h2
+                        className="text-4xl md:text-5xl font-bold leading-tight mb-5 tracking-tight text-white"
+                    >
+                        Need for Quantum-Resistant<br />
+                        Technologies Against{" "}
+                        <span className="text-transparent bg-clip-text bg-linear-to-r from-violet-400 via-purple-300 to-indigo-400">
+                            Quantum Threats
+                        </span>
+                    </h2>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-xl mx-auto font-light" style={{ fontFamily: "sans-serif" }}>
+                        Quantum computers threaten classical encryption, highlighting the need for
+                        quantum-resistant technologies and secure communication methods to protect
+                        against evolving quantum-based attacks on critical information.
+                    </p>
                 </div>
 
-                {/* ── THREAT CARDS GRID ── */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {threats.map(({ icon: Icon, color, label, title, body }, index) => {
-                        const c = colorMap[color]
-                        return (
-                            <div
-                                key={index}
-                                className="group relative p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] transition-all duration-500 overflow-hidden"
-                            >
-                                {/* Left accent bar on hover */}
-                                <div className={`absolute left-0 top-0 bottom-0 w-[3px] ${c.bar} rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                {/* ── EVIDENCE CARDS GRID ── */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
+                    {cases.map(({ image, source, date, quote, tag, tagColor }, i) => (
+                        <article
+                            key={i}
+                            className="group relative bg-white/3 rounded-2xl overflow-hidden border border-white/[0.07] hover:bg-white/5 transition-all duration-500 cursor-pointer"
+                        >
+                            {/* Hover left accent bar */}
+                            <div className="absolute left-0 top-0 bottom-0 w-0.75 bg-linear-to-b from-violet-500 to-purple-700 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                                {/* Top row: icon + label */}
-                                <div className="flex items-center gap-3 mb-4">
-                                    <div className={`p-2 rounded-lg ${c.icon}`}>
-                                        <Icon size={16} />
-                                    </div>
-                                    <span className={`text-[10px] font-mono uppercase tracking-[0.2em] ${c.label}`}>
-                                        {label}
+                            {/* Image */}
+                            <div className="relative h-52 overflow-hidden">
+                                <img
+                                    src={image}
+                                    alt={source}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-90"
+                                />
+                                {/* Purple-tinted overlay */}
+                                <div className="absolute inset-0 bg-linear-to-t from-[#07050f] via-violet-950/30 to-transparent" />
+                                {/* Tag chip */}
+                                <span
+                                    className={`absolute top-3 left-3 text-[9px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full border backdrop-blur-sm ${tagStyles[tagColor]}`}
+                                    style={{ fontFamily: "'Courier New', monospace" }}
+                                >
+                                    {tag}
+                                </span>
+                                {/* External link icon */}
+                                {/* <span className="absolute top-3 right-3 bg-white/10 backdrop-blur-sm p-1.5 rounded-full border border-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <ExternalLink size={12} className="text-white" />
+                                </span> */}
+                            </div>
+
+                            {/* Body */}
+                            <div className="p-5">
+                                {/* Quote */}
+                                <p className="text-[13px] text-gray-300 leading-relaxed mb-4 italic" style={{ fontFamily: "'Georgia', serif" }}>
+                                    &ldquo;{quote}&rdquo;
+                                </p>
+
+                                {/* Source footer */}
+                                <div className="flex items-center justify-between pt-3 border-t border-white/[0.07]">
+                                    <span
+                                        className="text-[10px] font-bold uppercase tracking-[0.18em] text-violet-400"
+                                        style={{ fontFamily: "'Courier New', monospace" }}
+                                    >
+                                        {source}
+                                    </span>
+                                    <span
+                                        className="text-[10px] text-gray-600"
+                                        style={{ fontFamily: "'Courier New', monospace" }}
+                                    >
+                                        {date}
                                     </span>
                                 </div>
-
-                                {/* Title */}
-                                <h3 className="text-base font-bold text-white tracking-tight leading-snug mb-3">
-                                    {title}
-                                </h3>
-
-                                {/* Body */}
-                                <p className="text-xs text-gray-500 leading-relaxed font-normal">
-                                    {body}
-                                </p>
                             </div>
-                        )
-                    })}
+                        </article>
+                    ))}
                 </div>
 
-                {/* ── BOTTOM CTA STRIP ── */}
-                <div className="mt-14 flex flex-col sm:flex-row items-center justify-between gap-6 p-6 rounded-2xl border border-white/5 bg-white/[0.015]">
-                    <div>
-                        <p className="text-white font-semibold text-base tracking-tight mb-1">
-                            Get the Full Quantum Threat Briefing.
-                        </p>
-                        <p className="text-gray-500 text-sm font-light">
-                            Download our product brochure — architecture, compliance standards, and pilot deployment details.{" "}
-                            <span className="text-gray-300">Everything decision-makers need.</span>
-                        </p>
-                    </div>
+                {/* ── CTA ── */}
+                <div className="flex justify-center">
                     <a
                         href="/brochure.pdf"
                         download
-                        className="shrink-0 inline-flex items-center gap-2 px-8 py-3.5 bg-purple-500 hover:bg-purple-600 rounded-full font-semibold text-sm transition-all duration-300 cursor-pointer whitespace-nowrap text-white"
+                        className="inline-flex items-center px-8 py-3 bg-violet-600 hover:bg-[#5b21b6] text-white rounded-full text-sm font-semibold transition-all duration-300"
+                        style={{ fontFamily: "sans-serif" }}
                     >
-                        <Download size={15} />
-                        Download Brochure
+                        Request a Demo
                     </a>
                 </div>
+
             </div>
         </section>
     )
