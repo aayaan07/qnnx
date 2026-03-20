@@ -430,7 +430,7 @@ export default function ProductsSection() {
           Get a tailored demo, threat assessment, or integration walkthrough — no commitment required.
         </p>
         <a
-          href="mailto:sidharth@qnnx.in?subject=QNNX Product Enquiry"
+          href="mailto:contact@qnnx.in?subject=QNNX Product Enquiry"
           style={{
             display: 'inline-flex', alignItems: 'center', gap: '10px',
             padding: '14px 32px', borderRadius: '14px',
@@ -447,7 +447,7 @@ export default function ProductsSection() {
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          Contact Us · sidharth@qnnx.in
+          Contact Us · contact@qnnx.in
         </a>
       </div>
     </section>
